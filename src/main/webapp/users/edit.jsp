@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>SB Admin 2</title>
+    <title>SbAdmin/Edycja</title>
 </head>
 <body id="page-top">
 <link href="<c:url value="/theme/css/sb-admin-2.css"/>" rel="stylesheet">
@@ -48,39 +48,37 @@
                 </ul>
             </nav>
             <div class="container-fluid">
+
+                <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">UsersCRUD</h1>
-                    <a href="<c:url value="/user/add"/>"
-                       class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                        <i class="fas fa-download fa-sm text-white-50"></i> Dodaj użytkownika</a>
+                    <h1 class="h3 mb-0 text-gray-800">UserCRUD</h1>
+                    <a href="<c:url value="/user/list"/> "
+                       class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Lista użytkowników</a>
                 </div>
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Lista użytkowników</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Edycja użytkownika</h6>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Nazwa użytkownika</th>
-                                    <th>Email</th>
-                                    <th>Akcja</th>
-                                </tr>
-                                <c:forEach items="${users}" var="user">
-                                    <tr>
-                                        <td>${user.id}</td>
-                                        <td>${user.userName}</td>
-                                        <td>${user.email}</td>
-                                        <td>
-                                            <a href='<c:url value="/user/delete?id=${user.id}"/>'>Usuń</a>
-                                            <a href='<c:url value="/user/edit?id=${user.id}"/>'>Edit</a>
-                                            <a href='<c:url value="/user/show?id=${user.id}"/>'>Pokaż</a>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-                            </table>
-                        </div>
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="userName">Nazwa</label>
+                                <input name="userName" type="text" class="form-control" id="userName"
+                                       placeholder="Nazwa użytkownika">
+                            </div>
+                            <div class="form-group">
+                                <label for="userEmail">Email</label>
+                                <input name="userEmail" type="email" class="form-control" id="userEmail"
+                                       placeholder="Email użytkownika">
+                            </div>
+                            <div class="form-group">
+                                <label for="userPassword">Hasło</label>
+                                <input name="userPassword" type="password" class="form-control" id="userPassword"
+                                       placeholder="Hasło użytkownika">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Edytuj</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -90,3 +88,4 @@
 </div>
 </body>
 </html>
+

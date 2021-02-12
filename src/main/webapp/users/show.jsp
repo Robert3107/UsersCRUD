@@ -56,29 +56,23 @@
                 </div>
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Lista użytkowników</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Szczegóły użytkownika</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Nazwa użytkownika</th>
-                                    <th>Email</th>
-                                    <th>Akcja</th>
+                                    <th scope="row">Id</th>
+                                    <td scope="col">${user.getId()}</td>
                                 </tr>
-                                <c:forEach items="${users}" var="user">
-                                    <tr>
-                                        <td>${user.id}</td>
-                                        <td>${user.userName}</td>
-                                        <td>${user.email}</td>
-                                        <td>
-                                            <a href='<c:url value="/user/delete?id=${user.id}"/>'>Usuń</a>
-                                            <a href='<c:url value="/user/edit?id=${user.id}"/>'>Edit</a>
-                                            <a href='<c:url value="/user/show?id=${user.id}"/>'>Pokaż</a>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
+                                <tr>
+                                    <th scope="row">Nazwa użytkownika</th>
+                                    <td scope="col">${user.getUsername()}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">E-mail</th>
+                                    <td scope="col">${user.getEmail()}</td>
+                                </tr>
                             </table>
                         </div>
                     </div>
