@@ -12,7 +12,6 @@ import java.sql.SQLException;
 public class UserShow extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         String userID = request.getParameter("id");
         int id = Integer.parseInt(userID);
 

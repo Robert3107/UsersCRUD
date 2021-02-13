@@ -56,22 +56,22 @@
                 </div>
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Szczegóły użytkownika</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Lista użytkowników</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
                                 <tr>
-                                    <th scope="row">Id</th>
-                                    <td scope="col">${user.getId()}</td>
+                                    <th>Id</th>
+                                    <td>${user.id}</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Nazwa użytkownika</th>
-                                    <td scope="col">${user.getUsername()}</td>
+                                    <th>Nazwa użytkownika</th>
+                                    <td>${user.userName}</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">E-mail</th>
-                                    <td scope="col">${user.getEmail()}</td>
+                                    <th>Email</th>
+                                    <td>${user.email}</td>
                                 </tr>
                             </table>
                         </div>
@@ -84,3 +84,4 @@
 </div>
 </body>
 </html>
+

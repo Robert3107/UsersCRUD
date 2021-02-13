@@ -12,7 +12,6 @@ import java.sql.SQLException;
 public class UserList extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         UserDao userDao = new UserDao();
         try {
             request.setAttribute("users", userDao.showAll());
